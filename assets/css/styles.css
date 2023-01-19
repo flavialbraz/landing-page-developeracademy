@@ -1,63 +1,309 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
+:root {
+  --main-color: #8b5cf6;
+}
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
 /* Fundo de tela*/
 
 html {
-    width: 100vw;
-    height: 100vh;
-    font-size: 62.5%;
-    color: #fff;
+  width: 100vw;
+  height: 100vh;
+  font-size: 62.5%;
+  color: #fff;
 }
 
 body {
-    background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(20, 20, 20, 1)), url(../img/img5.jpg);
-    background-position: center center;
-    background-size: cover;
-    background-position-y: 0px;
-    background-repeat: no-repeat;
+  background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(20, 20, 20, 1)),
+    url(../img/back.jpg);
+  background: linear-gradient(#0000008a, #181818), url(../img/back3.png);
+  background: linear-gradient(#0000007a, #7c3aed), url(../img/back2.jpg);
+  background: linear-gradient(#0000007a, #7c3aed), url(../img/back.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-position-y: 0px;
+  background-repeat: no-repeat;
 }
 
 /* Menu - Header - NavBar*/
 
 header {
-    width: 100%;
-    height: 7vh;
-    background-color: rgba(22, 22, 22, 0.2);
+  width: 100%;
+  height: 7vh;
+  padding-top: 4rem;
 }
 
 .menu-content {
-    text-transform: uppercase;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 1.8rem;
+  text-transform: uppercase;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.8rem;
 }
 
 .logo {
-    font-size: 1.8rem;
-    letter-spacing: 0.4rem;
-    cursor: pointer;
+  font-size: 1.8rem;
+  letter-spacing: 0.4rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.logo:hover {
+  color: var(--main-color);
+  transition: 0.5s;
 }
 
 .menu-content .list-itens {
-    display: flex;
-    list-style: none;
-    gap: 10px;
+  display: flex;
+  list-style: none;
+  gap: 10px;
 }
 
 .menu-content .list-itens a {
-    text-decoration: none;
-    color: #fff;
-    padding: 1.5rem;
-    transform: 2ms ease-in;
+  text-decoration: none;
+  color: #fff;
+  padding: 1.5rem 0;
+  transition: 0.6s;
+  position: relative;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.menu-content .list-itens a:before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: 0.8s;
+  left: 0px;
+}
+
+.menu-content .list-itens a:hover:before {
+  width: 100%;
+}
+
+.menu-content .list-itens li {
+  padding: 1.5rem;
+}
+
+.menu-content .list-itens a:hover {
+  color: #ffffff87;
+  transition: 0.6s;
+}
+
+.main-content {
+  max-width: 1000px;
+  margin: auto;
+  height: 93vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.primary-text {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 70%;
+}
+
+.second-text {
+  margin-bottom: 7rem;
+  font-size: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 1px;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.btn button {
+  padding: 1.9rem 3rem;
+  border: 1px solid #ffffff36;
+  background: unset;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  background-color: transparent;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  border-radius: 20px;
+  position: relative;
+  transition: 1.5s;
+  overflow: hidden;
+}
+
+.btn button:before {
+  content: " ";
+  border-radius: 20px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: var(--main-color);
+  z-index: -1;
+  transition: 0.8s;
+}
+
+.btn button:hover:before {
+  width: 100%;
+}
+
+@media only screen and (max-width: 880px) {
+  .primary-text {
+    font-size: 4rem;
+    max-width: 100%;
+    padding: 2rem;
+    margin-top: 11rem;
+  }
+
+  .main-content {
+    max-width: 100%;
+    height: 92vh;
+    padding-bottom: 10rem;
+  }
+
+  .btn {
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+  }
+
+  .btn buttton {
+    width: 100%;
+  }
+
+  .btn button {
+    width: 80%;
+    padding: 1.9rem 2rem;
+    font-size: 1rem;
+  }
+
+  .second-text {
+    font-size: 1rem;
+  }
+
+  .bars-menu {
+    width: 6vw;
+    height: 9vw;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    position: absolute;
+    left: 1rem;
+    top: 4.1rem;
+    transition: 0.6s;
+    z-index: 222222;
+  }
+
+  .menu-content {
+    flex-direction: column;
+  }
+
+  .bars-menu span {
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 4px;
+    transition: 0.6s;
+  }
+
+  .header-menu .list-itens {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 300vw;
+    padding-top: 12rem;
+    backdrop-filter: blur(50px);
+    border-radius: 0px 0px 0px 60px;
+    margin-top: -80px;
+  }
+
+  .bars-menu .bars-active {
+    width: 100%;
+    background: #fff;
+  }
+
+  .bars-active span:nth-child(1) {
+    opacity: 0;
+  }
+
+  .bars-active span:nth-child(2) {
+    transform: rotate(45deg);
+    margin-left: 2px;
+    margin-bottom: 0px;
+  }
+
+  .bars-active span:nth-child(3) {
+    transform: rotate(136deg);
+    margin-top: -9px;
+  }
+
+  .bars-menu span:nth-child(2) {
+    width: 87%;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    margin-top: 0.4rem;
     position: relative;
+    z-index: 222222;
+  }
+
+  .header-menu {
+    width: 100%;
+    margin-left: -100rem;
+    height: 0;
+    overflow: hidden;
+    transition: 0.6s;
+  }
+
+  .header-menu.nav-active {
+    margin-left: 0px;
+    transition: 0.6s;
+    overflow: unset;
+    z-index: 11;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .primary-text {
+    font-size: 3rem;
+    padding: 2rem;
+    margin-top: -5rem;
+  }
+
+  .btn button {
+    font-size: 1rem;
+    padding: 1.9rem 1rem;
+  }
+
+  .main-content {
+    height: 92vh;
+    padding-top: 13rem;
+  }
+
+  .logo {
+    margin-top: 1.4rem;
+  }
 }
