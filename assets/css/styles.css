@@ -228,11 +228,13 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 300vw;
+    height: 240vw;
     padding-top: 12rem;
     backdrop-filter: blur(50px);
-    border-radius: 0px 0px 0px 60px;
+    border-radius: 0;
     margin-top: -80px;
+    position: fixed;
+    width: 100%;
   }
 
   .bars-menu .bars-active {
