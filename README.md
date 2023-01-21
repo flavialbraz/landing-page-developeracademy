@@ -1,5 +1,3 @@
-# landing-page
-
 <h1 align="center">Projeto: DeveloperAcademy</h1>
 <hr>
 <h2 align="center">Aprendizados nesse projeto 🎯</h2>
